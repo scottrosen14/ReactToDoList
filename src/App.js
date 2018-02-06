@@ -37,6 +37,7 @@ class App extends Component {
         isDone: false
       });
       this.setState({
+        current: '',
         items: itemsCopy
       })
       // console.log('state', this.state)
@@ -62,7 +63,7 @@ class App extends Component {
         <div className="header">
           <h1>To Do List</h1>
           <form onSubmit={addItem}>
-            <input type="text" onChange={handleChange} placeholder="enter task" />
+            <input type="text" onChange={handleChange} value={state.current}placeholder="enter task" />
             <input className="addBtn" type="submit" value="Add Item"/>
           </form>
         </div>
