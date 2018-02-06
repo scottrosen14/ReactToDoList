@@ -32,7 +32,6 @@ class App extends Component {
     if (this.state.current !== "") {
       // add to beginning of copied array
       itemsCopy.unshift({
-        index: itemsCopy.length,
         text: this.state.current,
         isDone: false
       });
