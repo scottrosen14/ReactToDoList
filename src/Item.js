@@ -14,11 +14,11 @@ class Item extends Component {
     this.props.markDone(index);
   }
   render () {
-    const { state, index } = this.props;
+    const { state, item, index, markDone } = this.props;
     // console.log('items', items)
     return (
       <li>
-        {state.items[index].text}
+        <div className={item.isDone ? "checked" : "notDone"} onClick={this.onClickDone}>{item.text}</div>
         <span className="close" onClick={ this.onClickClose }>
         X
         </span>

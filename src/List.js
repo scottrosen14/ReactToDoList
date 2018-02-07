@@ -7,10 +7,10 @@ class List extends Component {
   }
 
   createTasks = (item, i) => {
-    const { state, deleteItem } = this.props;
+    const { state, deleteItem, markDone } = this.props;
     // console.log('List state', state);
     return (
-      <Item state={state} key={i} item={item} index={i} deleteItem={ deleteItem } />
+      <Item state={state} key={i} item={item} index={i} deleteItem={ deleteItem } markDone={markDone} />
     )
   }
 

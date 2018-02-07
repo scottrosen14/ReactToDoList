@@ -55,8 +55,17 @@ class App extends Component {
     this.setState({items: itemsFiltered})
   }
 
+  markDone = (index) => {
+    // copy items
+    // when you click on item, if items[index].isDone then switch to notDone
+    // if an item is done, make text red
+    const itemsCopy = this.state.items.slice();
+    itemsCopy[index].isDone = itemsCopy[index].isDone ? false : true;
+    this.setState({items: itemsCopy});
+  }
+
   render() {
-    const { state, addItem, deleteItem, handleChange } = this;
+    const { state, addItem, deleteItem, handleChange, markDone } = this;
     return (
       <div className="App">
         <div className="header">
@@ -66,7 +75,7 @@ class App extends Component {
             <input className="addBtn" type="submit" value="Add Item"/>
           </form>
         </div>
-        <List state={state} items={state.items} deleteItem= {deleteItem} />
+        <List state={state} items={state.items} deleteItem= {deleteItem} markDone={markDone} />
       </div>
     );
   }
